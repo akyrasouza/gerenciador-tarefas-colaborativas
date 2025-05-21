@@ -15,6 +15,8 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/users', userRoutes);
+
 
 //Configuração do Banco de Dados
 // const pool = new Pool({
