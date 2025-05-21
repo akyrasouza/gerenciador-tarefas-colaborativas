@@ -3,7 +3,6 @@ import cors from 'cors';
 import pg from 'pg';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-
 const JWT_SECRET = 'secreto_super_seguro';
 
 const { Pool } = pg;
@@ -131,6 +130,12 @@ app.put('/api/tasks/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+//Teste Deploy
+app.get('/', (req, res) => {
+  res.send('API do Gerenciador de Tarefas está no ar!');
+});
+
 
 // Iniciar o servidor
 app.listen(port, () => {
