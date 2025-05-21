@@ -4,6 +4,9 @@ import pg from 'pg';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 const JWT_SECRET = 'secreto_super_seguro';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Para carregar as variáveis do .env
 
 const { Pool } = pg;
 
@@ -14,13 +17,13 @@ app.use(cors());
 app.use(express.json());
 
 //Configuração do Banco de Dados
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'taskdb',
-  password: 'password',
-  port: 5432,
-});
+// const pool = new Pool({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'taskdb',
+//   password: 'password',
+//   port: 5432,
+// });
 
 
 // Registrar usuário
@@ -129,6 +132,14 @@ app.put('/api/tasks/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+//Configuração do Pool usando a DATABASE_URL
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Importante para conexões com o Render
+  },
 });
 
 //Teste Deploy
