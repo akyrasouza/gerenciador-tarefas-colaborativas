@@ -6,10 +6,9 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = 'secreto_super_seguro';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import pool from './db.js';
 
-dotenv.config(); // Para carregar as variáveis do .env
 
-const { Pool } = pg;
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -17,15 +16,6 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 app.use('/api/users', userRoutes);
-
-
-//Configuração do Banco de Dados
-const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false, // necessário para Railway
-  },
-});
 
 
 // Registrar usuário
