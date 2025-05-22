@@ -19,7 +19,7 @@ dotenv.config(); // Para carregar as variáveis do .env
 // app.use('/api/users', userRoutes);
 
 
-Configuração do Banco de Dados
+//Configuração do Banco de Dados
 const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
