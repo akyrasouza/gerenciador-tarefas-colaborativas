@@ -1,11 +1,12 @@
 import pg from 'pg';
-const { Pool } = pg;
+// db.js
+import pg from 'pg';
 
-//Configuração do Banco de Dados
-export const pool = new Pool({
-  user: 'postgres', //seu usuário do Postgres
-  password: 'password', //senha do usuário postgres
-  host: 'localhost',
-  port: 5432,
-  database: 'taskdb'//banco criado no Postgres
+const pool = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
+
+export default pool;
