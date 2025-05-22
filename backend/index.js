@@ -9,14 +9,14 @@ import userRoutes from './routes/userRoutes.js';
 
 dotenv.config(); // Para carregar as variáveis do .env
 
-// const { Pool } = pg;
+const { Pool } = pg;
 
-// const app = express();
-// const port = process.env.PORT || 3001;
+const app = express();
+const port = process.env.PORT || 3001;
 
-// app.use(cors());
-// app.use(express.json());
-// app.use('/api/users', userRoutes);
+app.use(cors());
+app.use(express.json());
+app.use('/api/users', userRoutes);
 
 
 //Configuração do Banco de Dados
