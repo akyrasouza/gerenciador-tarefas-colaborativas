@@ -6,9 +6,6 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = 'secreto_super_seguro';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
-import pool from './db.js';
-
-
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -126,13 +123,6 @@ app.put('/api/tasks/:id', async (req, res) => {
   }
 });
 
-//Configuração do Pool usando a DATABASE_URL
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false, // Importante para conexões com o Render
-  },
-});
 
 //Teste Deploy
 app.get('/', (req, res) => {
