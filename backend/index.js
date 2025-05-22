@@ -6,7 +6,8 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = 'secreto_super_seguro';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
-import pool from '../db.js';
+import { pool } from './db.js';
+
 
 const app = express();
 const port = process.env.PORT || 3001;
