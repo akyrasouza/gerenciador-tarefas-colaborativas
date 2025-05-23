@@ -4,6 +4,7 @@ import { pool } from '../db.js';
 
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
+   console.log("Recebido:", req.body);
 
   try {
     const hashed = await bcrypt.hash(password, 10);
@@ -19,6 +20,7 @@ export const register = async (req, res) => {
     res.status(201).json({ user, token });
   } catch (err) {
     console.error(err);
+     console.error("Erro ao cadastrar:", err);
     res.status(400).send("Erro ao cadastrar usuário");
   }
 };
