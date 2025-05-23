@@ -25,16 +25,24 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   const { email, password } = req.body;
+
   try {
-    const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+    const result = await pool.query("SELECT id, name, email, password FROM users WHERE email = $1", [email]);
     const user = result.rows[0];
+
     if (user && await bcrypt.compare(password, user.password)) {
       const token = jwt.sign({ userId: user.id }, "segredo", { expiresIn: "1d" });
-      res.json({ token });
+
+      // Remova a senha antes de enviar o user
+      const { password, ...userWithoutPassword } = user;
+
+      res.json({ user: userWithoutPassword, token });
     } else {
       res.status(401).send("Credenciais inválidas");
     }
-  } catch {
+  } catch (err) {
+    console.error(err);
     res.status(500).send("Erro ao autenticar");
   }
 };
+
