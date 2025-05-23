@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import TaskForm from "./components/TaskForm";
+import DashboardLayout from './components/DashboardLayout';
 import AdminArea from './pages/AdminArea';
 import UsuarioArea from './pages/UsuarioArea';
 import "../src/styles/App.css";
