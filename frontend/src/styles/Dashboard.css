@@ -82,7 +82,7 @@
 
 .dashboard-header {
   display: flex;
-  justify-content: space-between;
+  margin-bottom: 1rem;
   align-items: center;
 }
 
@@ -90,9 +90,10 @@
   background-color: #ff5f5f;
   border: none;
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .logout-button:hover {
