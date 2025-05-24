@@ -1,13 +1,16 @@
 import { Link, Outlet } from 'react-router-dom';
 import '../styles/DashboardLayout.css';
+import { useAuth } from '../context/AuthContext';
 
 function DashboardLayout() {
+  const { user } = useAuth();
+
   return (
     <div className="dashboard-layout">
       <aside className="sidebar">
         <h2>Painel</h2>
         <nav>
-          <Link to="/admin">Área do Administrador</Link>
+          {user?.is_admin && <Link to="/admin">Área do Administrador</Link>}
           <Link to="/usuario">Área do Usuário</Link>
           <Link to="/dashboard">Tarefas</Link>
         </nav>
@@ -20,3 +23,4 @@ function DashboardLayout() {
 }
 
 export default DashboardLayout;
+
