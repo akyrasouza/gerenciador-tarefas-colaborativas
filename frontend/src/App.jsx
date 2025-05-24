@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
+import { useAuth } from './contexts/AuthContext';
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
@@ -23,6 +25,13 @@ function App() {
       </Routes>
     </Router>
   );
+}
+function PrivateRouteAdmin({ children }) {
+  const { user } = useAuth();
+  if (!user || !user.is_admin) {
+    return <Navigate to="/" />;
+  }
+  return children;
 }
 
 export default App;
