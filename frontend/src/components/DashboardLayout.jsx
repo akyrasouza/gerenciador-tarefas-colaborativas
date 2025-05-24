@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import './DashboardLayout.css';
+import '../styles/DashboardLayout.css';
 
 function DashboardLayout() {
   return (
