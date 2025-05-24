@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import '../styles/DashboardLayout.css';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 function DashboardLayout() {
   const { user } = useAuth();
