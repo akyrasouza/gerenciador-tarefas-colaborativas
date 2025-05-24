@@ -17,9 +17,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/" element={<DashboardLayout />}>
           <Route path="/register" element={<Register />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="admin" element={<AdminArea />} />
-          <Route path="usuario" element={<UsuarioArea />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/usuario" element={<UsuarioArea />} />
           <Route path="/task/:id" element={<TaskForm />} />
           <Route path="/admin" element={
             <PrivateRouteAdmin>
