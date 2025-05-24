@@ -10,8 +10,10 @@ export const register = async (req, res) => {
     const hashed = await bcrypt.hash(password, 10);
 
     const result = await pool.query(
-      "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email",
-      [name, email, hashed]
+      "INSERT INTO users (name, email, password, is_admin) VALUES ($1, $2, $3, $4) RETURNING id, name, email, is_admin",
+      [name, email, hashed, false] // por padrão, todo novo usuário é comum
+
+
     );
 
     const user = result.rows[0];
@@ -29,7 +31,7 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const result = await pool.query("SELECT id, name, email, password FROM users WHERE email = $1", [email]);
+    const result = await pool.query("SELECT id, name, email, password, is_admin FROM users WHERE email = $1", [email]);
     const user = result.rows[0];
 
     if (user && await bcrypt.compare(password, user.password)) {
@@ -37,7 +39,6 @@ export const login = async (req, res) => {
 
       // Remova a senha antes de enviar o user
       const { password, ...userWithoutPassword } = user;
-
       res.json({ user: userWithoutPassword, token });
     } else {
       res.status(401).send("Credenciais inválidas");
