@@ -17,6 +17,7 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="admin" element={<AdminArea />} />
           <Route path="usuario" element={<UsuarioArea />} />
+          <Route path="/task/:id" element={<TaskForm />} />
         </Route>
       </Routes>
     </Router>
