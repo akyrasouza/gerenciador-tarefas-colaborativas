@@ -12,8 +12,6 @@ export const register = async (req, res) => {
     const result = await pool.query(
       "INSERT INTO users (name, email, password, is_admin) VALUES ($1, $2, $3, $4) RETURNING id, name, email, is_admin",
       [name, email, hashed, false] // por padrão, todo novo usuário é comum
-
-
     );
 
     const user = result.rows[0];
@@ -31,35 +29,32 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const result = await pool.query(
-      "SELECT id, name, email, password, is_admin FROM users WHERE email = $1",
-      [email]
-    );
-
+    const result = await pool.query("SELECT id, name, email, password, is_admin FROM users WHERE email = $1", [email]);
     const user = result.rows[0];
-    console.log(" Usuário encontrado no banco:", user); 
 
     if (user) {
-      const passwordMatch = await bcrypt.compare(password, user.password);
-      console.log(" Senha confere?", passwordMatch); 
+      console.log("Senha digitada:", password);
+      console.log("Hash salvo no banco:", user.password);
 
-      if (passwordMatch) {
+      const isMatch = await bcrypt.compare(password, user.password);
+      console.log("Match da senha:", isMatch);
+
+      if (isMatch) {
         const token = jwt.sign({ userId: user.id }, "segredo", { expiresIn: "1d" });
 
-        // Remova a senha antes de enviar o user
         const { password, ...userWithoutPassword } = user;
-        console.log("Login bem-sucedido, retornando:", userWithoutPassword); 
-
-        return res.json({ user: userWithoutPassword, token });
+        res.json({ user: userWithoutPassword, token });
+      } else {
+        res.status(401).send("Credenciais inválidas (senha incorreta)");
       }
+    } else {
+      res.status(401).send("Credenciais inválidas (usuário não encontrado)");
     }
-
-    console.warn(" Credenciais inválidas para:", email); 
-    res.status(401).send("Credenciais inválidas");
   } catch (err) {
-    console.error("Erro ao autenticar:", err); 
+    console.error(err);
     res.status(500).send("Erro ao autenticar");
   }
 };
+
 
 
