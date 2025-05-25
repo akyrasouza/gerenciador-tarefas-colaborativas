@@ -13,11 +13,12 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Login e Registro fora do layout principal */}
+
+        {/* Rotas públicas */}
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* Área protegida com layout lateral */}
+        {/* Rotas privadas com layout */}
         <Route path="/" element={<DashboardLayout />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="usuario" element={<UsuarioArea />} />
@@ -31,6 +32,10 @@ function App() {
             }
           />
         </Route>
+
+        {/* Qualquer rota não mapeada vai para login */}
+        <Route path="*" element={<Navigate to="/" />} />
+
       </Routes>
     </Router>
   );
@@ -45,4 +50,5 @@ function PrivateRouteAdmin({ children }) {
 }
 
 export default App;
+
 
