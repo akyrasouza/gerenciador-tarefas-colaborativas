@@ -23,6 +23,7 @@ function App() {
           <Route path="/" element={<DashboardLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="usuario" element={<UsuarioArea />} />
+            <Route path="task" element={<TaskForm />} /> 
             <Route path="task/:id" element={<TaskForm />} />
             <Route
               path="admin"
