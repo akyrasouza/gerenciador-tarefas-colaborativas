@@ -25,19 +25,12 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="usuario" element={<UsuarioArea />} />
           <Route path="task/:id" element={<TaskForm />} />
-          <Route
-            path="admin"
-            element={
+          <Route path="admin" element={
               <PrivateRouteAdmin>
                 <AdminArea />
               </PrivateRouteAdmin>
-            }
-          />
+            }/>
         </Route>
-
-        {/* Qualquer rota não mapeada vai para login */}
-        <Route path="*" element={<Navigate to="/" />} />
-
       </Routes>
     </Router>
   );
