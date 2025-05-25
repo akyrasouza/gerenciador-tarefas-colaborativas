@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import TaskForm from "./components/TaskForm";
+import PrivateRoute from './components/PrivateRoute';
 import DashboardLayout from './components/DashboardLayout';
 import AdminArea from './pages/AdminArea';
 import UsuarioArea from './pages/UsuarioArea';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Rotas privadas com layout */}
+        <Route element={<PrivateRoute />}>
         <Route path="/" element={<DashboardLayout />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="usuario" element={<UsuarioArea />} />
