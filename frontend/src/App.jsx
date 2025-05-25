@@ -14,22 +14,25 @@ function App() {
   return (
     <Router>
       <Routes>
-
         {/* Rotas públicas */}
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* Rotas privadas com layout */}
         <Route element={<PrivateRoute />}>
-        <Route path="/" element={<DashboardLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="usuario" element={<UsuarioArea />} />
-          <Route path="task/:id" element={<TaskForm />} />
-          <Route path="admin" element={
-              <PrivateRouteAdmin>
-                <AdminArea />
-              </PrivateRouteAdmin>
-            }/>
+          <Route path="/" element={<DashboardLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="usuario" element={<UsuarioArea />} />
+            <Route path="task/:id" element={<TaskForm />} />
+            <Route
+              path="admin"
+              element={
+                <PrivateRouteAdmin>
+                  <AdminArea />
+                </PrivateRouteAdmin>
+              }
+            />
+          </Route>
         </Route>
       </Routes>
     </Router>
@@ -39,7 +42,7 @@ function App() {
 function PrivateRouteAdmin({ children }) {
   const { user } = useAuth();
   if (!user || !user.is_admin) {
-    return <Navigate to="/" />;
+    return <Navigate to="/dashboard" />; // redireciona admins falsos para dashboard comum
   }
   return children;
 }
