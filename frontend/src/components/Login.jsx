@@ -11,17 +11,24 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
- const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await api.post('/login', { email, password });
-      login(res.data.user, res.data.token);
-      navigate('/dashboard');
-    } catch (err) {
-       console.error("Erro no login:", err);
-      alert('Login inválido');
+const handleLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await api.post('/login', { email, password });
+    login(res.data.user, res.data.token);
+
+    // Redireciona para admin ou usuário
+    if (res.data.user.is_admin) {
+      navigate('/admin');
+    } else {
+      navigate('/usuario');
     }
-  };
+  } catch (err) {
+    console.error("Erro no login:", err);
+    alert('Login inválido');
+  }
+};
+
   return (
     <div className="login-container">
       <div className="image-side">
