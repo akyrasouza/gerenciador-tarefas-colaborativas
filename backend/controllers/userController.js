@@ -39,12 +39,13 @@ export const login = async (req, res) => {
       const isMatch = await bcrypt.compare(password, user.password);
       console.log("Match da senha:", isMatch);
 
-      if (isMatch) {
-        const token = jwt.sign({ userId: user.id }, "segredo", { expiresIn: "1d" });
+     if (isMatch) {
+      const token = jwt.sign({ userId: user.id }, "segredo", { expiresIn: "1d" });
 
-        const { password, ...userWithoutPassword } = user;
-        res.json({ user: userWithoutPassword, token });
-      } else {
+      const { password: hashedPassword, ...userWithoutPassword } = user;
+      console.log("Usuário enviado para o frontend:", userWithoutPassword); //para debug
+      res.json({ user: userWithoutPassword, token });
+  } else {
         res.status(401).send("Credenciais inválidas (senha incorreta)");
       }
     } else {
