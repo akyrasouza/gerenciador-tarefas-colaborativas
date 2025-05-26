@@ -24,7 +24,7 @@ function Dashboard() {
       <div className="dashboard-header">
         <div className="dashboard-title">
           <h2>
-            Minhas Tarefas
+            Tarefas Colaborativas
             <FaTasks className="icon-tasks" />
           </h2>
         </div>
