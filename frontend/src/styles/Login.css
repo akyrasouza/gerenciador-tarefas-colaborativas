@@ -111,7 +111,6 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding: 2rem; 
   border-radius: 8px; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
   /* Adiciona margem apenas à direita da imagem e à esquerda do formulário para criar espaço se necessário, mas para colar, removemos */
@@ -128,6 +127,7 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: 0; 
+  padding: 1rem; 
 }
 
 
