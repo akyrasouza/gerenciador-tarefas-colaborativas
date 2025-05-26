@@ -126,12 +126,6 @@ app.put('/api/tasks/:id', async (req, res) => {
 });
 
 
-//Teste Deploy
-// app.get('/', (req, res) => {
-//   res.send('API do Gerenciador de Tarefas está no ar!');
-// });
-
-
 // Iniciar o servidor
 app.listen(port, () => {
   console.log(`Servidor backend rodando em http://localhost:${port}`);
