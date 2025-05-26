@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
-import { Link, useNavigate} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { FaTasks } from "react-icons/fa";
 import api from "../services/api";
 import "../styles/Dashboard.css";
 
 function Dashboard() {
   const [tasks, setTasks] = useState([]);
- const { logout } = useAuth();
-  const navigate = useNavigate();
 
    useEffect(() => {
     const fetchTasks = async () => {
