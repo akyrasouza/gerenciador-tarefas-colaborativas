@@ -22,7 +22,12 @@ function Dashboard() {
  return (
     <div className="dashboard">
       <div className="dashboard-header">
-         <h2>Tarefas Colaborativas<FaTasks className="logout-button" /></h2> 
+        <div className="dashboard-title">
+          <h2>
+            Minhas Tarefas
+            <FaTasks className="icon-tasks" />
+          </h2>
+        </div>
       </div>
       <Link to="/task" className="new-task-button">Nova Tarefa</Link>
       <div className="card-container">

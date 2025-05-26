@@ -84,17 +84,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
 }
 
-.logout-button {
-  border: none;
-  padding: 6px 12px;
-  margin-right: 40px;
+.dashboard-title h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.icon-tasks {
+  margin-left: 12px;
+  font-size: 24px;
 }
 
 
