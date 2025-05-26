@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate} from "react-router-dom";
+import { FaTasks } from "react-icons/fa";
 import api from "../services/api";
 import "../styles/Dashboard.css";
 
@@ -21,17 +22,10 @@ function Dashboard() {
     fetchTasks();
   }, []);
 
-//Logout do usuário
-const handleLogout = () => {
-    logout();         // Limpa usuário e token
-    navigate("/");    // Redireciona para a tela de login
-  };
-
  return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <h2>Minhas Tarefas</h2>
-        <button onClick={handleLogout} className="logout-button">Sair</button>
+         <h2>Tarefas Colaborativas<FaTasks style={{ marginRight: "8px" }} /></h2> 
       </div>
       <Link to="/task" className="new-task-button">Nova Tarefa</Link>
       <div className="card-container">
