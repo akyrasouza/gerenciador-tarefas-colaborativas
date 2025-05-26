@@ -15,7 +15,6 @@ const handleLogin = async (e) => {
   e.preventDefault();
   try {
     const res = await api.post('/login', { email, password });
-    console.log("Resposta do login:", res.data);//para debug
     login(res.data.user, res.data.token);
     
     if (res.data.user.is_admin) {
