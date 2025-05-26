@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/useAuth';
+//import { useAuth } from '../contexts/AuthContext';
 import api from "../services/api";
 import "../styles/Login.css";
 import loginImage from '../assets/login-interface.png';
