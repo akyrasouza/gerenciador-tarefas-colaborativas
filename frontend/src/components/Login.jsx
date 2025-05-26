@@ -32,7 +32,7 @@ const handleLogin = async (e) => {
   return (
     <div className="login-container">
       <div className="image-side">
-       <img  src={loginImage} alt="Login" />
+       <img className="login-image" src={loginImage} alt="Login" />
       </div>
       <div className="form-side">
         <form className="login-form" onSubmit={handleLogin}>

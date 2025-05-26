@@ -36,9 +36,9 @@
 
 
 .login-image { 
-  max-width: 100%;
+  max-width: 90%;
   height: auto; 
-  max-height: 400px; 
+  max-height: 390px; 
   object-fit: contain;
   margin-top: auto; /* Centraliza verticalmente */
   margin-bottom: auto;

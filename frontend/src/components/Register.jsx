@@ -37,7 +37,7 @@ const handleRegister = async (e) => {
    return (
     <div className="login-container">
       <div className="image-side">
-         <img src={RegisterImage} alt="Cadastrar" />
+         <img className="login-image" src={RegisterImage} alt="Cadastrar" />
       </div>
 
       <div className="form-side">
