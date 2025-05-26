@@ -92,7 +92,6 @@
 }
 
 .logout-button {
-  background-color: #ff5f5f;
   border: none;
   color: white;
   padding: 6px 12px;
@@ -100,11 +99,6 @@
   border-radius: 4px;
   font-size: 14px;
 }
-
-.logout-button:hover {
-  background-color: #e04e4e;
-}
-
 
 
 @media (max-width: 768px) {
