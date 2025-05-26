@@ -20,6 +20,7 @@
 
 .task-card{
   background-color: #f8f9fa;
+  padding: 16px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   width: calc(33.333% - 20px); /* 3 por linha com gap */
@@ -81,11 +82,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-}
-
-.dashboard-title{
   background-color: white;
 }
+
 .dashboard-title h2 {
   display: flex;
   justify-content: space-between;
