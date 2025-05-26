@@ -42,9 +42,13 @@ export const login = async (req, res) => {
      if (isMatch) {
       const token = jwt.sign({ userId: user.id }, "segredo", { expiresIn: "1d" });
 
-      const { password: hashedPassword, ...userWithoutPassword } = user;
-      console.log("Usuário enviado para o frontend:", userWithoutPassword); //para debug
-      res.json({ user: userWithoutPassword, token });
+     const { password: hashedPassword, ...userWithoutPassword } = user;
+      res.json({ user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        is_admin: user.is_admin
+    }, token });
   } else {
         res.status(401).send("Credenciais inválidas (senha incorreta)");
       }
