@@ -2,7 +2,6 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi'; 
 import '../styles/DashboardLayout.css';
 import { useAuth } from '../contexts/useAuth';
-//import { useAuth } from '../contexts/AuthContext';
 
 function DashboardLayout() {
   const { user, logout } = useAuth();
