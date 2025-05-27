@@ -99,7 +99,7 @@ O projeto está organizado em dois diretórios principais:
 
 # Deploy
 ## Link da aplicação:
-[Text to link](https://link-url.com)
+[Vercel - Gerenciador de Tarefas](https://gerenciador-tarefas-colaborativas-issr44722.vercel.app)
 
 ## Link do domínio:
-[Text to link](https://link-url.com)
+[Railway - Gerenciador de Tarefas](https://gerenciador-tarefas-colaborativas-production.up.railway.app/)
