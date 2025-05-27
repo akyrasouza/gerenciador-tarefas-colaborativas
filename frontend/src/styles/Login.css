@@ -1,47 +1,31 @@
 .login-container {
   display: flex;
-  align-items: stretch; /* Faz os filhos terem a mesma altura */
   justify-content: center;
-  min-height: 100vh; 
-  width: 100%;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
   background-color: #f0f2f5;
-  padding: 1rem; /* Espaçamento geral do container */
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .image-side, .form-side {
-  flex: 1 1 45%; /* Ajusta a base flexível */
+  flex: 1 1 400px;
   max-width: 500px;
   display: flex;
-  flex-direction: column; /* Alinha conteúdo interno verticalmente */
   align-items: center;
   justify-content: center;
+  min-height: 500px;
   background-color: white;
-  border-radius: 8px; 
+ 
 }
 
-/* Ajustes para colar os lados e remover padding/bordas/sombras entre eles */
-.image-side {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-right: 0; 
-  padding: 2rem 0 2rem 2rem; /* Remove padding direito */
-}
-
-.form-side {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: 0; 
-  padding: 2rem 2rem 2rem 0; /* Remove padding esquerdo */
-}
-
-
-.login-image { 
-  max-width: 90%;
-  height: auto; 
-  max-height: 390px; 
+.image-side img {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  margin-top: auto; /* Centraliza verticalmente */
-  margin-bottom: auto;
+  aspect-ratio: 1 / 1;
+  
 }
 
 .login-form {
@@ -49,67 +33,48 @@
   max-width: 350px;
   display: flex;
   flex-direction: column;
-  margin-top: auto; /* Centraliza verticalmente */
-  margin-bottom: auto;
+  padding: 2rem;
 }
 
 .login-form h2 {
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 1.8rem;
-  color: #333;
 }
 
 .login-form input {
   width: 100%;
-  padding: 0.85rem;
+  padding: 0.75rem;
   margin-bottom: 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
 
-.login-form input:focus {
-  outline: none;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
-}
-
 .login-form button {
   width: 100%;
-  padding: 0.85rem;
+  padding: 0.75rem;
   background-color: #4f46e5;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   margin-top: 0.5rem;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
-}
-
-.login-form button:hover {
-  background-color: #4338ca;
 }
 
 .register-link {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.95rem;
 }
 
 .register-link a {
   color: #4f46e5;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
-
-.register-link a:hover {
-  text-decoration: underline;
-}
-
 /* --- Responsividade --- */
 
 /* Tablet e Telas Médias */
