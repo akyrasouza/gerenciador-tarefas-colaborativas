@@ -8,7 +8,6 @@ import PrivateRoute from './components/PrivateRoute';
 import DashboardLayout from './components/DashboardLayout';
 import AdminArea from './pages/AdminArea';
 import UsuarioArea from './pages/UsuarioArea';
-import "../src/styles/App.css";
 
 function App() {
   return (
