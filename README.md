@@ -57,7 +57,8 @@ O projeto está organizado em dois diretórios principais:
        id SERIAL PRIMARY KEY,
        name VARCHAR(100),
        email VARCHAR(100) UNIQUE NOT NULL,
-       password VARCHAR(100) NOT NULL
+       password VARCHAR(100) NOT NULL,
+       is_admin BOOLEAN DEFAULT false
      );
 ```
   **Tabela tasks**
@@ -71,6 +72,7 @@ O projeto está organizado em dois diretórios principais:
       title VARCHAR(255) NOT NULL,
       description TEXT,
       status task_status DEFAULT 'pendente',
+      user_id INTEGER REFERENCES users(id),
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
   ```
@@ -94,3 +96,10 @@ O projeto está organizado em dois diretórios principais:
 ```
      http://localhost:<número-da-porta>
   ```
+
+# Deploy
+## Link da aplicação:
+[Text to link](https://link-url.com)
+
+## Link do domínio:
+[Text to link](https://link-url.com)
