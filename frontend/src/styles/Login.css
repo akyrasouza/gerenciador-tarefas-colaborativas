@@ -151,15 +151,23 @@
       padding: 1rem 0.5rem; /* Reduz padding lateral do container */
   }
 
+  /* Reduz a imagem em vez de ocultar */
   .image-side {
-     display: none; /* Oculta a imagem */
+    padding: 1rem; /* Restaura um padding menor para a área da imagem */
+    margin-bottom: 1rem; /* Mantém a margem inferior */
+    max-height: 200px; /* Limita a altura máxima da área da imagem */
+    overflow: hidden; /* Esconde qualquer parte da imagem que exceda */
+  }
+
+  .login-image {
+      max-height: 150px; /* Define uma altura máxima bem reduzida para a imagem */
   }
 
   .form-side {
-    margin: 0; 
+    margin: 0; /* Garante sem margens */
     padding: 1.5rem; /* Ajusta padding interno */
-    box-shadow: none; 
-    border-radius: 0; 
+    box-shadow: none; /* Remove sombra */
+    border-radius: 0; /* Remove bordas arredondadas */
     max-width: 100%;
     width: 100%; 
   }
