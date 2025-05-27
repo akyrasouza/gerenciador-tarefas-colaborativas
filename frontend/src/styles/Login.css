@@ -24,14 +24,14 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   margin-right: 0; 
-  padding: 0 0 0 2rem; /* Remove padding direito */
+  padding: 2rem 0 2rem 2rem; /* Remove padding direito */
 }
 
 .form-side {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: 0; 
-  padding: 0 2rem 0 0; /* Remove padding esquerdo */
+  padding: 2rem 2rem 2rem 0; /* Remove padding esquerdo */
 }
 
 
@@ -131,6 +131,11 @@
     padding: 2rem; 
   }
 
+  /* Adiciona margem apenas abaixo da imagem para separar do formulário */
+  .image-side {
+      margin-bottom: 1rem; 
+      border-radius: 8px; 
+  }
   .form-side {
       border-radius: 8px; 
   }
