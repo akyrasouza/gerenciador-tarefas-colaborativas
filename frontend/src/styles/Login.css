@@ -133,7 +133,7 @@
 
   /* Adiciona margem apenas abaixo da imagem para separar do formulário */
   .image-side {
-      margin-bottom: 1rem; 
+      margin-bottom: 0.5px; 
       border-radius: 8px; 
   }
   .form-side {
