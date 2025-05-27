@@ -96,11 +96,6 @@
     padding: 2rem; 
   }
 
-  /* Adiciona margem apenas abaixo da imagem para separar do formulário */
-  .image-side {
-      margin-bottom: 1rem; 
-      border-radius: 8px; 
-  }
   .form-side {
       border-radius: 8px; 
   }
