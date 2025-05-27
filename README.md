@@ -41,7 +41,7 @@ O projeto está organizado em dois diretórios principais:
   # Iniciando Projeto:
 
    ## Configure o backend:
-   1. Acessar pasta
+  1. Acessar pasta
   - Navegue até o diretório `backend`.
   - Instale as dependências:
   ```
