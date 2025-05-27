@@ -129,10 +129,10 @@
   }
 
   .form-side {
-    margin: 0; /* Garante sem margens */
+    margin: 0; 
     padding: 1.5rem; /* Ajusta padding interno */
-    box-shadow: none; /* Remove sombra */
-    border-radius: 0; /* Remove bordas arredondadas */
+    box-shadow: none; 
+    border-radius: 0; 
     max-width: 100%;
     width: 100%; 
   }

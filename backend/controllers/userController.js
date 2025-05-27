@@ -4,7 +4,6 @@ import { pool } from '../db.js';
 
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
-   console.log("Recebido:", req.body);
 
   try {
     const hashed = await bcrypt.hash(password, 10);

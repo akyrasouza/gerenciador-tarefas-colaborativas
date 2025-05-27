@@ -3,16 +3,23 @@ import cors from 'cors';
 import pg from 'pg';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-const JWT_SECRET = 'secreto_super_seguro';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import { pool } from './db.js';
 
+dotenv.config();
 
+const JWT_SECRET = 'secreto_super_seguro';
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+//app.use(cors());
+
+//Para uso local
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
 app.use(express.json());
 app.use('/api/users', userRoutes);
 
